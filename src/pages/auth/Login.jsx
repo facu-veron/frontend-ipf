@@ -8,10 +8,13 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { connect } from "react-redux";
+
+import { login } from "../../stateManagement/redux/actions/login.action";
 
 const theme = createTheme();
 
-export const Login = () => {
+const Login = ({ errorMessage, login }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -19,6 +22,7 @@ export const Login = () => {
       username: data.get("username"),
       password: data.get("password"),
     });
+    login(data.get("username"), data.get("password"));
   };
 
   return (
@@ -80,3 +84,7 @@ export const Login = () => {
     </ThemeProvider>
   );
 };
+
+const mapStateToProps = (state) => state.session;
+
+export default connect(mapStateToProps, { login })(Login);

@@ -1,9 +1,6 @@
 import React from "react";
+import { MainRoutes } from "./routes/MainRoutes";
 
 export const App = () => {
-  return (
-    <div>
-      <h1>Hola app</h1>
-    </div>
-  );
+  return <MainRoutes />;
 };
