@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import MuiAppBar from "@mui/material/AppBar";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
 import { Avatar, Toolbar, Typography } from "@mui/material";
 import { deepOrange } from "@mui/material/colors";
 
@@ -54,6 +55,8 @@ export const AppBarComponent = ({ toggleDrawer, open }) => {
         >
           Administrador
         </Typography>
+        <Button color="inherit">Grupo</Button>
+
         <IconButton color="inherit">
           {/*  <Badge  badgeContent={4} color="secondary">
                 <NotificationsIcon />

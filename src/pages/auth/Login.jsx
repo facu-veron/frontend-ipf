@@ -11,10 +11,12 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { connect } from "react-redux";
 
 import { login } from "../../stateManagement/redux/actions/login.action";
+import { useNavigate } from "react-router-dom";
 
 const theme = createTheme();
 
 const Login = ({ errorMessage, login }) => {
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -23,6 +25,7 @@ const Login = ({ errorMessage, login }) => {
       password: data.get("password"),
     });
     login(data.get("username"), data.get("password"));
+    navigate("/dashboard");
   };
 
   return (

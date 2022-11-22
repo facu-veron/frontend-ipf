@@ -10,7 +10,7 @@ export const login = (username, password) => async (dispatch) => {
   };
 
   try {
-    const response = await axios.post("/backend/login/login", body, config);
+    const response = await axios.post("/backend/auth/login", body, config);
 
     const { token, user } = response.data;
     console.log("token del usuario: ", token);

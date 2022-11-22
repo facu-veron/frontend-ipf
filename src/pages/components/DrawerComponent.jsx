@@ -53,7 +53,7 @@ export const DrawerComponent = ({ toggleDrawer, open }) => {
       <List component="nav">
         {/* Items */}
         <ItemsComponent />
-        <Divider sx={{ my: 1 }} />
+        <Divider sx={{ my: 1, opacity: 0.3 }} />
       </List>
     </Drawer>
   );
